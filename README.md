@@ -1,7 +1,7 @@
 # Web-Grundlagen
 
 # DNS
-## Was ist DNS in der IT-Sicherheit?
+### Was ist DNS in der IT-Sicherheit?
 DNS (Domain Name System) ermöglicht die Übersetzung von Domänennamen in IP-Adressen  In Bezug auf die IT-Sicherheit hat DNS einige potenzielle Sicherheitsrisiken, die es zu berücksichtigen gilt.
 
 1.  **DNS-Spoofing**: Hierbei manipulieren Angreifer einen DNS-Server, um falsche IP-Adressen für bestimmte Domänen bereitzustellen. Dadurch kann es zu Phishing-Angriffen oder zur Weiterleitung auf gefälschte Websites kommen.
@@ -19,7 +19,7 @@ Um diese und andere Risiken zu minimieren, gibt es Technologien wie DNSSEC (Doma
 - What is the maximum length of a subdomain? 63
 - What is the maximum length of a domain name? 253
 
-## Was sind Record Types
+### Was sind Record Types
 Record Types (auch als DNS-Eintragsarten bezeichnet) sind die verschiedenen Arten von Datensätzen, die in einer DNS-Datenbank gespeichert werden können. Jeder Record Type enthält spezifische Informationen über eine Domäne oder eine Ressource im Internet.
 
 Einige der häufigsten Record Types sind:
@@ -38,7 +38,7 @@ Einige der häufigsten Record Types sind:
 
 Es gibt noch weitere Record Types, die in DNS-Datenbanken gespeichert werden können, je nach Bedarf. Jeder Record Type hat seine eigene Funktion und Bedeutung und ist wichtig für die korrekte Übersetzung von Domänennamen in IP-Adressen und andere Netzwerkressourcen.
 
-## Was passiert, wenn man eine DNS-Anfrage stellt?
+### Was passiert, wenn man eine DNS-Anfrage stellt?
 
 Wenn Sie eine DNS-Anfrage stellen, passiert Folgendes:
 
