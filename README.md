@@ -24,17 +24,17 @@ Record Types (auch als DNS-Eintragsarten bezeichnet) sind die verschiedenen Arte
 
 Einige der häufigsten Record Types sind:
 
-1.  A (Address) Record: Dies ist ein Eintrag, der einer Domäne eine IP-Adresse zuordnet.
+1.  **A (Address) Record**: Dies ist ein Eintrag, der einer Domäne eine IP-Adresse zuordnet.
     
-2.  MX (Mail Exchange) Record: Dies ist ein Eintrag, der einer Domäne die Informationen zu einem oder mehreren Mail-Servern zuordnet.
+2.  **MX (Mail Exchange) Record**: Dies ist ein Eintrag, der einer Domäne die Informationen zu einem oder mehreren Mail-Servern zuordnet.
     
-3.  CNAME (Canonical Name) Record: Dies ist ein Eintrag, der einer Domäne einen alias zu einer anderen Domäne zuordnet.
+3.  **CNAME (Canonical Name) Record**: Dies ist ein Eintrag, der einer Domäne einen alias zu einer anderen Domäne zuordnet.
     
-4.  NS (Name Server) Record: Dies ist ein Eintrag, der einer Domäne den Namen eines oder mehrerer Nameserver zuordnet.
+4.  **NS (Name Server) Record**: Dies ist ein Eintrag, der einer Domäne den Namen eines oder mehrerer Nameserver zuordnet.
     
-5.  TXT (Text) Record: Dies ist ein Eintrag, der frei formatierte Textinformationen über eine Domäne bereitstellt.
+5.  **TXT (Text) Record**: Dies ist ein Eintrag, der frei formatierte Textinformationen über eine Domäne bereitstellt.
     
-6.  SRV (Service) Record: Dies ist ein Eintrag, der spezifische Informationen über einen bestimmten Dienst innerhalb einer Domäne bereitstellt.
+6.  **SRV (Service) Record**: Dies ist ein Eintrag, der spezifische Informationen über einen bestimmten Dienst innerhalb einer Domäne bereitstellt.
 
 Es gibt noch weitere Record Types, die in DNS-Datenbanken gespeichert werden können, je nach Bedarf. Jeder Record Type hat seine eigene Funktion und Bedeutung und ist wichtig für die korrekte Übersetzung von Domänennamen in IP-Adressen und andere Netzwerkressourcen.
 
