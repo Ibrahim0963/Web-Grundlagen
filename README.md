@@ -249,3 +249,145 @@ Webserver sind Anwendungen, die Anfragen von Clients (z.B. Webbrowser) empfangen
 6.  **Client empfängt Antwort**: Der Client empfängt die Antwort vom Webserver und verarbeitet sie, indem er die Ressource darstellt oder weiterverarbeitet.
 
 Dies ist ein einfacher Überblick über den Ablauf von Anfragen und Antworten zwischen einem Client und einem Webserver.
+
+
+# Einführung in das Web-Hacking
+
+## Begriffe
+### robots.txt
+`robots.txt` ist eine Datei, die auf einer Website platziert wird und Suchmaschinenbots angibt, welche Teile der Website nicht indiziert werden sollen. Die Datei befindet sich normalerweise im Root-Verzeichnis einer Website und enthält Anweisungen, welche Teile der Website für Suchmaschinen-Bots zugänglich sein sollen und welche Teile nicht.
+
+### sitemap.xml
+`sitemap.xml` ist eine XML-Datei, die eine Übersicht über die Struktur einer Website bereitstellt. Die Sitemap enthält eine Liste aller URLs auf einer Website, sowie Informationen zur Häufigkeit der Aktualisierungen und zur Wichtigkeit jeder URL in Bezug auf die gesamte Website. Sitemaps helfen Suchmaschinen bei der Indexierung einer Website und verbessern das Verständnis des Suchmaschinenbots für die Struktur und Inhalte einer Website.
+
+### Google Hacking oder Dorking
+**Google Hacking oder Dorking** ist eine Praxis, bei der eine Person spezielle Suchanfragen an Google oder eine andere Suchmaschine sendet, um gefährdete oder private Informationen zu finden, die auf Websites im Internet verfügbar sind. Diese Suchanfragen nutzen Schwachstellen in den Websites, um sensible Informationen wie Benutzernamen, Passwörter, Finanzdaten usw. zu finden.
+
+### Wappalyzer
+**Wappalyzer** ist ein Browser-Plug-in, das entwickelt wurde, um die Technologien hinter Websites zu erkennen und zu identifizieren. Es analysiert den HTML-Code, JavaScript-Bibliotheken und andere Komponenten einer Website, um die verwendeten Technologien und Frameworks zu erkennen.
+
+
+### Framework Stack
+Ein **Framework Stack** ist eine Sammlung von Programmier-Frameworks und Tools, die zusammen verwendet werden, um eine Anwendung zu erstellen. Ein Framework Stack umfasst normalerweise ein Front-End-Framework für die Benutzeroberfläche, ein Back-End-Framework für die Serverlogik und eine Datenbank, um Daten zu speichern.
+
+Zum Beispiel könnte ein Framework Stack für eine Web-Anwendung folgendermaßen aussehen:
+
+-   Front-End-Framework: React
+-   Back-End-Framework: Express (auf Node.js)
+-   Datenbank: MongoDB
+
+In diesem Beispiel würde der Entwickler React verwenden, um die Benutzeroberfläche der Anwendung zu erstellen, Express auf Node.js, um die Serverlogik zu implementieren, und MongoDB, um Daten zu speichern.
+
+### S3 Buckets
+**Amazon Simple Storage Service (Amazon S3)** ist ein cloudbasierter Speicherdienst von Amazon Web Services (AWS), mit dem Benutzer Daten objektbasiert speichern und über das Internet bereitstellen können. Ein S3-Bucket ist ein logischer Speicherort in Amazon S3, in dem Benutzer Daten wie Bilder, Videos, Dokumente oder andere Dateien speichern können.
+
+Jeder S3-Bucket hat einen eindeutigen Namen und kann in einer von vielen AWS-Regionen gehostet werden, um eine hohe Verfügbarkeit und Latenz für Endbenutzer zu gewährleisten. S3-Buckets bieten eine Vielzahl von Funktionen, darunter **Datenintegrität** und **Datensicherheit**, **Skalierbarkeit**, hohe **Verfügbarkeit** und **Backup**- und **Wiederherstellungsfähigkeit**.
+
+### SSL/TLS-Zertifikate
+SSL/TLS-Zertifikate sind digitale Zertifikate, die verwendet werden, um die Identität einer Website zu verifizieren und eine sichere Datenübertragung zwischen einem Benutzer und einer Website zu gewährleisten. SSL steht für Secure Sockets Layer, während TLS für Transport Layer Security steht. TLS ist die Nachfolge-Technologie von SSL und bietet eine höhere Sicherheit für die Datenübertragung.
+
+Das Zertifikat enthält Informationen über die Website, die es verwendet, einschließlich ihres Namens, ihrer Adresse und ihrer öffentlichen Schlüssel, die zur Verschlüsselung der Daten verwendet werden. Ein Zertifizierungsstelle (CA) verifiziert die Informationen in dem Zertifikat und stellt es aus, um sicherzustellen, dass es von einer vertrauenswürdigen Quelle stammt.
+
+Wenn ein Benutzer eine gesicherte Verbindung zu einer Website aufbaut, überprüft der Browser das SSL/TLS-Zertifikat, um sicherzustellen, dass es von einer vertrauenswürdigen Quelle stammt und dass die Website, die er besucht, tatsächlich die ist, für die sie sich ausgibt. Die Daten, die zwischen dem Benutzer und der Website übertragen werden, werden dann mithilfe des öffentlichen Schlüssels verschlüsselt, um sicherzustellen, dass nur der Benutzer und die Website sie lesen können.
+
+
+## OWASP
+OWASP steht für Open Web Application Security Project und ist eine weltweite Organisation, die sich der Verbesserung der IT-Sicherheit von Web-Anwendungen widmet. OWASP bietet eine Vielzahl von Ressourcen, darunter Informationsdokumente, Tools und Best Practices, um Unternehmen bei der Bewertung und Verbesserung der Sicherheit ihrer Web-Anwendungen zu unterstützen. Eines ihrer bekanntesten Projekte ist die OWASP Top 10, eine jährlich aktualisierte Liste der zehn häufigsten Web-Sicherheitsrisiken
+
+## Subdomains sammeln
+### crt.sh
+https://crt.sh/
+https://ui.ctsearch.entrust.com/ui/ctsearchui
+
+### Search Engines
+`-site:www.example.local  site:.example.local`
+### DNS bruteforcing
+```
+dnsrecon -t brt -d exmaple.local
+
+```
+### Other automated tools
+
+### Virtual Hosts
+```
+ffuf -w /usr/share/wordlists/SecLists/Discovery/DNS/namelist.txt -H "Host: FUZZ.exmaple.local" -u http://TARGET_IP
+
+then 
+
+fuf -w /usr/share/wordlists/SecLists/Discovery/DNS/namelist.txt -H "Host: FUZZ.exmaple.local" -u http://TARGET_IP -fs {size}
+```
+
+## Authentication Bypass
+**Authentication Bypass** bezieht sich auf eine Sicherheitslücke, bei der ein Angreifer die normalen Authentifizierungs- und Autorisationsmechanismen einer Anwendung umgeht, um auf geschützte Ressourcen oder Daten zuzugreifen, die normalerweise nicht verfügbar sind.
+
+```
+ffuf -w /usr/share/wordlists/SecLists/Usernames/Names/names.txt -X POST -d "username=FUZZ&email=x&password=x&cpassword=x" -H "Content-Type: application/x-www-form-urlencoded" -u http://MACHINE_IP/customers/signup -mr "username already exists"
+
+ffuf -w valid_usernames.txt:W1,/usr/share/wordlists/SecLists/Passwords/Common-Credentials/10-million-password-list-top-100.txt:W2 -X POST -d "username=W1&password=W2" -H "Content-Type: application/x-www-form-urlencoded" -u http://MACHINE_IP/customers/login -fc 200
+```
+
+## IDOR
+IDOR ist eine Sicherheitslücke, die bei der Entwicklung von Webanwendungen auftreten kann.
+
+Ein IDOR tritt auf, wenn eine Anwendung nicht angemessen auf Zugriffsberechtigungen überprüft, was bedeutet, dass ein Angreifer Zugang zu vertraulichen oder geschützten Daten erlangen kann, ohne dass eine angemessene Überprüfung stattfindet.
+
+Dies ist ein Typ von Sicherheitslücke, bei dem ein Angreifer durch Manipulation von Referenzen auf direkte Objekte, wie z.B. URLs oder Parametern in Anfragen, auf Daten zugreifen kann, die normalerweise geschützt oder nicht für ihn bestimmt sind.
+
+## "LFI" (Local File Inclusion) vs. "RFI" (Remote File Inclusion)
+1.  **LFI (Local File Inclusion)**: LFI tritt auf, wenn eine Web-Anwendung dazu verwendet wird, lokale Systemdateien auszulesen, indem einfach die Pfade der Dateien in einer Anfrage angegeben werden. Hierbei können vertrauliche Informationen ausgelesen oder Systemressourcen ausgenutzt werden.
+    
+2.  **RFI (Remote File Inclusion)**: RFI ist ähnlich wie LFI, aber statt lokale Systemdateien auszulesen, werden hier Dateien von entfernten Servern eingebunden. Hierbei kann ein Angreifer bösartigen Code ausführen, indem er eine URL zu einer gefährlichen Datei bereitstellt, die von der Anwendung ausgeführt wird.
+
+## SSRF
+**SSRF** steht für Server-Side Request Forgery und ist eine Art von Sicherheitsanfälligkeit in Webservern. Es ermöglicht es Angreifern, Anfragen von einem Server auszuführen, anstatt von einem echten Benutzer. Dadurch kann ein Angreifer internen Netzwerken und Systemen Schaden zufügen oder private Daten ausspähen.
+
+## XSS
+XSS (Cross-Site Scripting) ist ein Typ von Sicherheitslücke, die es Angreifern ermöglicht, bösartigen Code in einer Webseite einzubetten, die von anderen Benutzern besucht wird. Dies kann dazu führen, dass sensible Informationen gestohlen oder die Interaktion der Benutzer mit der Webseite manipuliert wird.
+
+## Command Injection
+Command Injection ist eine Art von Sicherheitslücke, bei der ein Angreifer in einer Eingabebox oder in einem Formular einen Schadcode eingibt, der dann auf dem Server ausgeführt wird. Hierbei kann es zu einer Veränderung oder Überschreibung von Daten kommen, zum Absturz des Systems oder zur Übernahme der Kontrolle durch den Angreifer.
+
+## SQli
+SQL-Injection ist eine Art von Sicherheitsbedrohung bei Web-Anwendungen, bei der ein Angreifer unsichere Dateneingaben nutzt, um Schadcode in eine SQL-Datenbank einzufügen oder darauf auszuführen. Dadurch kann der Angreifer vertrauliche Informationen aus der Datenbank stehlen, Daten ändern oder sogar die Kontrolle über die gesamte Datenbank erlangen.
+
+
+# die OWASP Top 10 Sicherheitslücken
+
+### Injection
+**Injection**: Eine Injection-Sicherheitslücke entsteht, wenn unsichere Dateneingaben in Befehle oder Abfragen an eine Datenbank, ein Betriebssystem oder ein anderes System injiziert werden. Ein Beispiel hierfür ist eine SQL-Injection-Angriff, bei dem ein Angreifer eine schädliche Abfrage in ein Webformular eingibt, um sensible Daten wie Passwörter oder Kreditkartendetails zu stehlen.
+
+### Broken Access Control
+**Broken Access Control**: Diese Sicherheitslücke tritt auf, wenn es nicht ausreichende Zugriffskontrollen gibt, die den Zugriff auf geschützte Ressourcen oder Funktionen auf einer Website oder Anwendung regulieren. Ein Beispiel wäre, wenn ein Benutzer auf eine bestimmte URL einer Website zugreifen kann, die normalerweise nur von Administratoren zugänglich sein sollte.
+
+### Sensitive Data Exposure
+**Sensitive Data Exposure**: Dies bezieht sich auf den unsicheren Umgang mit sensiblen Daten wie Passwörtern, Kreditkartendaten, Sozialversicherungsnummern usw. Dies kann durch mangelnde Verschlüsselung, unsichere Speicherung oder unzureichende Überprüfung der Übertragung dieser Daten verursacht werden.
+
+### XML External Entities (XXE)
+**XML External Entities (XXE)**: Diese Sicherheitslücke tritt auf, wenn eine Anwendung schädliche XML-Daten entgegennimmt und verarbeitet, die externe Ressourcen oder Systeme angreifen können. Ein Angreifer könnte beispielsweise eine schädliche XML-Datei an eine Anwendung senden, die dazu verwendet wird, sensible Daten wie Passwörter oder andere geheime Informationen zu stehlen.
+
+### Broken Authentication and Session Management
+**Broken Authentication and Session Management**: Diese Sicherheitslücke tritt auf, wenn es Fehler in der Verwaltung von Anmeldeinformationen und Sitzungen gibt, wie beispielsweise unsichere Passwörter, unverschlüsselte Übertragung von Anmeldeinformationen oder unzureichende Überprüfung von Sitzungstoken.
+
+### Cross-Site Scripting (XSS)
+**Cross-Site Scripting (XSS)**: Diese Sicherheitslücke tritt auf, wenn eine Anwendung schädlichen JavaScript-Code von einer bösartigen Website entgegennimmt und ausführt, was zu einer Übernahme der Sitzung des Benutzers oder zu anderen schädlichen Aktionen führen kann.
+
+### Broken Cryptography:
+**Broken Cryptography** bezieht sich auf eine mangelhafte Verschlüsselung, die ein Hacker ausnutzen kann, um sensibles Daten auszuspähen. Ein Beispiel dafür ist, wenn eine Website Passwörter als Klartext speichert, anstatt sie mit einer starken Verschlüsselungsmethode wie bcrypt oder Argon2 zu verschlüsseln.
+
+### Insufficient Logging & Monitoring 
+**Insufficient Logging & Monitoring** bezieht sich auf die mangelhafte Überwachung von Systemen und Anwendungen. Wenn Systeme nicht ausreichend protokolliert werden, können Hacker unbemerkt Schaden anrichten und es wird schwer sein, die Ursache zu identifizieren.
+
+
+### Using Components with Known Vulnerabilities
+**Using Components with Known Vulnerabilities** bezieht sich auf das Verwenden von Software-Komponenten, die bekannte Sicherheitslücken aufweisen. Ein Beispiel dafür wäre, wenn eine Website eine alte Version eines Content Management Systems verwendet, das bekannte Sicherheitslücken aufweist.
+
+### Insufficient Security Configurations
+**Insufficient Security Configurations** bezieht sich auf die mangelhafte Konfiguration von Systemen und Anwendungen. Ein Beispiel dafür wäre, wenn ein Administrator standardmäßige Anmeldeinformationen für eine Anwendung verwendet, anstatt sichere, starke Passwörter zu verwenden.
+
+
+
+
+
+
+
+
